@@ -1,0 +1,24 @@
+@import 'fonts/fonts';
+@import 'mixins/mixins';
+@import 'vars';
+@import '../icomoon/style.css';
+
+//Tailwind
+@import 'tailwind/tailwind.css';
+
+@import 'reset';
+@import 'base';
+
+//Sidebar
+@import 'app/sidebar';
+
+//Navbar
+@import 'app/navbar';
+
+//Home
+@import 'home/home';
+
+//Select
+@import 'app/select';
+
+@import 'app';

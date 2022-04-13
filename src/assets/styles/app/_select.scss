@@ -1,0 +1,60 @@
+.select {
+    position: relative;
+    &.left {
+        .options {
+            left: 0;
+        }
+    }
+    &.right {
+        .options {
+            right: 0;
+        }
+    }
+    &.active {
+        .options {
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            transform: translateY(13px);
+        }
+        .icon-arrow {
+            transform: rotate(90deg) translateX(2px);
+        }
+    }
+    &.center {
+        .options {
+            left: 50%;
+            transform: translate(-50%, 13px);
+        }
+    }
+    &-lable {
+        white-space: nowrap;
+        &:hover {
+            color: $blue;
+            .icon-arrow {
+                &::before {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    .options {
+        position: absolute;
+        top: 100%;
+        min-width: 120px;
+        border-radius: 4px;
+        background-color: #000;
+        padding: 8px 27px;
+        transition: all 0.4s;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        &-item {
+            padding: 8px 0;
+            white-space: nowrap;
+            &:hover {
+                color: $yellow;
+            }
+        }
+    }
+}

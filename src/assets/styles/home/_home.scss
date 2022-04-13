@@ -1,0 +1,22 @@
+.home {
+    &-top {
+        &__tabs {
+            border: 1px solid $yellow;
+            border-radius: 4px;
+            .tab-item {
+                padding: 7px 30px;
+                color: $yellow;
+                cursor: pointer;
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 140%;
+                &.active {
+                    background-color: $yellow;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
