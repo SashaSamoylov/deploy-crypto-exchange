@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar bg-gray h-full">
+  <div class="sidebar bg-gray">
       <a href="/" class="logo">Logo</a>
       <router-link
         v-for="link in links"

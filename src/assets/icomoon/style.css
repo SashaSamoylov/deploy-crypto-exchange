@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?az4qfc');
-  src:  url('fonts/icomoon.eot?az4qfc#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?az4qfc') format('truetype'),
-    url('fonts/icomoon.woff?az4qfc') format('woff'),
-    url('fonts/icomoon.svg?az4qfc#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?y7qwc3');
+  src:  url('fonts/icomoon.eot?y7qwc3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?y7qwc3') format('truetype'),
+    url('fonts/icomoon.woff?y7qwc3') format('woff'),
+    url('fonts/icomoon.svg?y7qwc3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -111,6 +111,10 @@
 }
 .icon-account:before {
   content: "\e914";
+  color: #888b9a;
+}
+.icon-door:before {
+  content: "\e91b";
   color: #888b9a;
 }
 .icon-news:before {
