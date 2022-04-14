@@ -26,7 +26,8 @@ export default {
           backgroundColor: gradient,
           borderColor: '#ED983B',
           borderWidth: 2,
-          fill: true
+          fill: true,
+          tension: 0.3
         }]
       },
       options: {

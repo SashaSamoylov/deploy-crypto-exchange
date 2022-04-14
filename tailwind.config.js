@@ -1,5 +1,6 @@
 module.exports = {
   purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
+  important: true,
   theme: {
     screens: {
       s: '320px',
@@ -24,7 +25,8 @@ module.exports = {
     }),
     fontFamily: {
       noto: ['Noto Sans SC', 'sans-serif'],
-      roboto: ['Roboto Condensed', 'sans-serif']
+      roboto: ['Roboto Condensed', 'sans-serif'],
+      inter: ['Inter', 'sans-serif']
     },
     extend: {}
   },

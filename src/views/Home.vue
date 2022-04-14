@@ -8,7 +8,7 @@
       </div>
       <i class="icon-star mr-3 cursor-pointer"></i>
       <i class="icon-info"></i>
-      <div class="home-top__tabs flex ml-auto">
+      <div class="home-top__tabs tabs-btn flex ml-auto">
         <div class="tab-item"
           v-for="tab in tabs"
           :key="tab"
