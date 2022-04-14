@@ -30,12 +30,10 @@
                 margin-right: 15px;
             }
         &.active {
-            a {
-                color: $blue;
-                i {
-                    &::before {
-                        color: $blue;
-                    }
+            color: $blue;
+            i {
+                &::before {
+                    color: $blue;
                 }
             }
         }

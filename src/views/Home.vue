@@ -50,9 +50,9 @@
           <div class="item-count">39969.98</div>
         </div>
       </div>
-      <div class="home-chart mt-11 mb-4">
-        <canvas ref="chart" id="chart"></canvas>
-      </div>
+
+      <AppChart class="mt-11" />
+
     </div>
     <div class="home-footer flex items-center p-8 mb-10">
       <button class="btn px-9">
@@ -66,8 +66,7 @@
 </template>
 
 <script>
-import { Chart, registerables } from 'chart.js'
-Chart.register(...registerables)
+import AppChart from '@/components/app/AppChart'
 
 export default {
   name: 'Home',
@@ -75,42 +74,8 @@ export default {
     tabs: ['Level', 'Deposit', 'Withdrawl'],
     tabActive: 'Withdrawl'
   }),
-  components: {},
-  mounted () {
-    // eslint-disable-next-line no-unused-vars
-    const chart = new Chart(this.$refs.chart, {
-      type: 'line',
-      data: {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8],
-        datasets: [{
-          label: 'Test',
-          data: [30, 40, 25, 30, 25, 20, 25, 35, 45],
-          backgroundColor: [
-            'white'
-          ],
-          borderColor: '#ED983B',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            grid: {
-              drawBorder: true,
-              color: 'rgba(255, 255, 255, 0.1)'
-            }
-          },
-          y: {
-            grid: {
-              drawBorder: true,
-              color: 'rgba(255, 255, 255, 0.1)'
-            }
-          }
-        }
-      }
-    })
+  components: {
+    AppChart
   }
 }
 </script>
