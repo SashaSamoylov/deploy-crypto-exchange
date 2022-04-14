@@ -1,0 +1,105 @@
+<template>
+  <div class="account">
+    <div class="account-body flex justify-between">
+      <div class="account-item">
+        <div class="crypto flex items-center">
+          <div class="crypto-img">
+            <img src="img/cryptocurrency/btc.svg" alt="">
+          </div>
+          <div class="crypto-name">BTC/USDT</div>
+        </div>
+        <div class="crypto-price">
+          <div class="crypto-price__item flex mb-6">
+            <div class="flex items-center">
+              <i class="icon-plus-btn"></i>
+              <p class="text-green">Buy Price</p>
+            </div>
+            <div class="ml-auto price">40347.39</div>
+          </div>
+          <div class="crypto-price__item flex">
+            <div class="flex items-center">
+              <i class="icon-minus-btn"></i>
+              <p class="text-red">Sell Price</p>
+            </div>
+            <div class="ml-auto price">38582.97</div>
+          </div>
+        </div>
+      </div>
+      <div class="account-item">
+        <div class="account-item__header flex">
+          <div class="name">Available Balance:</div>
+          <div class="count ml-auto text-white">123123123</div>
+        </div>
+        <div class="account-item__field">
+          <div class="lable">Deposite</div>
+          <div class="value">Choouse amount</div>
+        </div>
+        <div class="account-item__field mt-auto">
+          <div class="lable">Multiple</div>
+          <AppSelect
+            class=""
+            :lable="multiple"
+            :options="multipleOptions"
+            @select="selectMultiple"
+          />
+        </div>
+      </div>
+      <div class="account-item">
+        <div class="account-item__header flex">
+          <div class="name">Total Order Value:</div>
+          <div class="count ml-auto text-white">123123123</div>
+        </div>
+        <div class="account-item__field flex items-center">
+          <h4>Profit Stop</h4>
+          <div class="stop flex items-center ml-auto">
+            <i class="icon-minus-empty" @click="profit--"></i>
+            <div class="stop-profit">{{ profit }}</div>
+            <i class="icon-plus-empty" @click="profit++"></i>
+          </div>
+        </div>
+        <div class="account-item__field flex items-center mt-auto">
+          <h4>Loss Stop</h4>
+          <div class="stop flex items-center ml-auto">
+            <i class="icon-minus-empty" @click="loss--"></i>
+            <div class="stop-profit">{{ loss }}</div>
+            <i class="icon-plus-empty" @click="loss++"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="account-footer flex">
+      <div class="switch flex items-center">
+        <input type="checkbox" id="switch" v-model="support" />
+        <label for="switch"></label>
+        <p class="ml-3.5">Support Overnight Protection</p>
+      </div>
+      <div class="account-footer__btn flex ml-auto">
+        <button class="btn btn-blue py-2.5 px-8">Place Call Order</button>
+        <button class="btn btn-yellow ml-5 py-2.5 px-8">Place Put Order</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import AppSelect from '@/components/ui/AppSelect'
+
+export default {
+  name: 'Account',
+  data: () => ({
+    support: false,
+    multiple: 'x10',
+    multipleOptions: ['x10', 'x20', 'x30'],
+    profit: 0,
+    loss: 0
+  }),
+  components: {
+    AppSelect
+  },
+  methods: {
+    selectMultiple (option) {
+      this.multiple = option
+    }
+  }
+}
+</script>

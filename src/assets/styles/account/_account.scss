@@ -1,0 +1,184 @@
+.account {
+    padding-top: 48px;
+    &-item  {
+        width: calc(100% / 3 - 16px);
+        background-color: $gray;
+        border-radius: 4px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        .crypto {
+            margin-bottom: 32px;
+            &-img {
+                width: 48px;
+                height: 48px;
+                margin-right: 18px;
+            }
+            &-name {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 140%;
+                color: $white;
+            }
+            &-price {
+                background-color: $black;
+                border-radius: 4px;
+                padding: 27px;
+                &__item {
+                    p {
+                        margin-left: 11px;
+                        font-family: $roboto;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 140%;
+                    }
+                    .price {
+                        font-family: $noto;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 140%;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &__header {
+            font-family: $roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 140%;
+            margin-bottom: 20px;
+        }
+        &__field {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 13px 20px;
+            min-height: 72px;
+            .lable {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 140%;
+            }
+            .value {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 140%;
+                color: $white;
+            }
+            .select {
+                &.active {
+                    .icon-arrow {
+                        transform: rotate(90deg) translateX(-4px);
+                    }
+                }
+                &-lable {
+                    width: 100%;
+                    .name {
+                        font-family: $roboto;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 140%;
+                        color: $white;
+                    }
+                    .icon-arrow {
+                        font-size: 12px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%) rotate(-90deg);
+                    }
+                }
+                .options {
+                    width: 100%;
+                }
+            }
+            h4 {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 140%;
+                color: $white;
+            }
+            .stop {
+                i {
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                &-profit {
+                    font-family: $roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 140%;
+                    color: $white;
+                    margin: 0 22px;
+                    min-width: 20px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    &-footer {
+        background-color: $gray;
+        border-radius: 4px;
+        padding: 32px;
+        margin-top: 25px;
+        .switch {
+            p {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 140%;
+                color: $white;
+            }
+            input[type=checkbox]{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+            }
+            label {
+                cursor: pointer;
+                text-indent: -9999px;
+                width: 44px;
+                height: 26px;
+                background: grey;
+                display: block;
+                border-radius: 100px;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    width: 16px;
+                    height: 16px;
+                    background: #fff;
+                    border-radius: 90px;
+                    transition: 0.3s;
+                }
+            }
+            input:checked {
+                & + label {
+                    background: $blue;
+                    &::after {
+                        left: calc(100% - 5px);
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+          }
+    }
+}
