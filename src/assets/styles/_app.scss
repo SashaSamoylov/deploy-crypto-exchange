@@ -2,5 +2,12 @@
     &-content {
         width: 86%;
         padding: 0 42px 0 52px;
+        @include l-block() {
+            width: calc(100% - 150px);
+        }
+        @include m-block() {
+            width: 100%;
+            padding: 0 0 60px;
+        }
     }
 }

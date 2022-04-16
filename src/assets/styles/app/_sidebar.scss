@@ -5,6 +5,24 @@
     padding: 32px 42px 6px;
     display: flex;
     flex-direction: column;
+    @include l-block() {
+        padding: 32px 30px 6px;
+        width: 150px;
+        min-width: inherit;
+    }
+    @include m-block() {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: inherit;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 15px;
+        z-index: 1000;
+    }
     .logo {
         font-family: $noto;
         font-style: normal;
@@ -14,10 +32,18 @@
         text-transform: uppercase;
         color: $white;
         margin-bottom: 88px;
+        @include m-block() {
+            display: none;
+        }
     }
     &-item {
         margin: 15px 0;
         padding: 15px 0;
+        @include m-block() {
+            margin: 0;
+            flex-direction: column;
+            justify-content: center;
+        }
             &:hover {
                 color: $blue;
                 i {
@@ -39,6 +65,11 @@
         }
         &:last-child {
             margin-top: auto;
+        }
+        i {
+            @include m-block() {
+                margin: 0 auto 2px;
+            }
         }
     }
 }

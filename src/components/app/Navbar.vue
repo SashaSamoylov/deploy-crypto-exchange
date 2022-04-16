@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar flex">
+  <nav class="navbar lg:flex hidden">
     <div v-if="title" class="navbar-left flex items-center">
       <button class="btn" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
       <h4 class="ml-8 text-white font-roboto">{{ title }}</h4>
@@ -9,7 +9,7 @@
       class="navbar-left flex items-center"
     >
       <h4>模拟持仓</h4>
-      <div class="navbar-left__item ml-10 mr-12 flex items-center">
+      <div class="navbar-left__item xl:ml-10 ml-5 xl:mr-12 mr-5 flex items-center">
         <i class="icon-sound"></i>
         <h5 class="text-gray-light ml-2.5">用BTC可以赚BTC啦! 杠杆高达100倍</h5>
       </div>
