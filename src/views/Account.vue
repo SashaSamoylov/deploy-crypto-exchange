@@ -20,10 +20,10 @@
               <p>1036.72 <span>获取</span></p>
           </div>
         </div>
-        <div class="account-card__footer flex mt-auto">
-          <button class="btn btn-blue py-2.5 px-12">充值</button>
-          <button class="btn ml-auto mr-auto">提款</button>
-          <button class="btn">划转</button>
+        <div class="account-card__footer">
+          <button class="btn btn-blue py-2.5">充值</button>
+          <button class="btn btn-border__blue ml-auto mr-auto">提款</button>
+          <button class="btn btn-border__blue">划转</button>
         </div>
       </div>
       <div class="account-card empty">
