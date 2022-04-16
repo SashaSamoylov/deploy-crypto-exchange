@@ -73,7 +73,7 @@
         <label for="switch"></label>
         <p class="ml-3.5">Support Overnight Protection</p>
       </div>
-      <div class="order-footer__btn flex ml-auto">
+      <div class="order-footer__btn flex md:ml-auto">
         <button class="btn btn-blue py-2.5 px-8">Place Call Order</button>
         <button class="btn btn-yellow ml-5 py-2.5 px-8">Place Put Order</button>
       </div>

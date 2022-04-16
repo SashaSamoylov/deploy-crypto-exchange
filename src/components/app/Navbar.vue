@@ -1,12 +1,12 @@
 <template>
-  <nav class="navbar lg:flex hidden">
-    <div v-if="title" class="navbar-left flex items-center">
+  <nav class="navbar">
+    <div v-if="title" class="navbar-left title flex items-center">
       <button class="btn" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
-      <h4 class="ml-8 text-white font-roboto">{{ title }}</h4>
+      <h4 class="md:ml-8 text-white font-roboto">{{ title }}</h4>
     </div>
     <div
       v-else
-      class="navbar-left flex items-center"
+      class="navbar-left lg:flex hidden items-center"
     >
       <h4>模拟持仓</h4>
       <div class="navbar-left__item xl:ml-10 ml-5 xl:mr-12 mr-5 flex items-center">
@@ -16,7 +16,7 @@
       <h5 class="text-blue">查看详情</h5>
     </div>
 
-    <ul class="navbar-right flex ml-auto items-center">
+    <ul class="navbar-right lg:flex hidden ml-auto items-center">
 
       <AppSelect
         class="center"
