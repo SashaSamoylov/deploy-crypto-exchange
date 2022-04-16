@@ -38,6 +38,15 @@ const routes = [
     component: () => import('../views/Order.vue')
   },
   {
+    path: '/details',
+    name: 'Details',
+    meta: {
+      layout: 'main',
+      title: 'Order details'
+    },
+    component: () => import('../views/Details.vue')
+  },
+  {
     path: '/support',
     name: 'Support',
     meta: { layout: 'main' },
