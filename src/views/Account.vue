@@ -1,104 +1,101 @@
 <template>
-  <div class="account">
-    <div class="account-body flex justify-between">
-      <div class="account-item">
-        <div class="crypto flex items-center">
-          <div class="crypto-img">
-            <img src="img/cryptocurrency/btc.svg" alt="">
+  <div class="account flex">
+    <div class="account-body flex">
+      <div v-for="card in cards" :key="card" class="account-card">
+        <div class="account-card__title">可用资产 USDT</div>
+        <div class="account-card__body flex mt-auto items-center">
+          <div class="subtitle">3.70</div>
+          <div class="ml-auto">
+            <div class="flex items-center package mb-1">
+              <p>红包</p>
+              <i class="icon-question"></i>
+            </div>
+            <div class="flex items-center package">
+              <p>TFT</p>
+              <i class="icon-question"></i>
+            </div>
           </div>
-          <div class="crypto-name">BTC/USDT</div>
+          <div class="ml-5 text-right get">
+              <p class="mb-0.5">6.33 <span>获取</span></p>
+              <p>1036.72 <span>获取</span></p>
+          </div>
         </div>
-        <div class="crypto-price">
-          <div class="crypto-price__item flex mb-6">
-            <div class="flex items-center">
-              <i class="icon-plus-btn"></i>
-              <p class="text-green">Buy Price</p>
-            </div>
-            <div class="ml-auto price">40347.39</div>
-          </div>
-          <div class="crypto-price__item flex">
-            <div class="flex items-center">
-              <i class="icon-minus-btn"></i>
-              <p class="text-red">Sell Price</p>
-            </div>
-            <div class="ml-auto price">38582.97</div>
-          </div>
+        <div class="account-card__footer flex mt-auto">
+          <button class="btn btn-blue py-2.5 px-12">充值</button>
+          <button class="btn ml-auto mr-auto">提款</button>
+          <button class="btn">划转</button>
         </div>
       </div>
-      <div class="account-item">
-        <div class="account-item__header flex">
-          <div class="name">Available Balance:</div>
-          <div class="count ml-auto text-white">123123123</div>
-        </div>
-        <div class="account-item__field">
-          <div class="lable">Deposite</div>
-          <div class="value">Choouse amount</div>
-        </div>
-        <div class="account-item__field mt-auto">
-          <div class="lable">Multiple</div>
-          <AppSelect
-            class=""
-            :lable="multiple"
-            :options="multipleOptions"
-            @select="selectMultiple"
-          />
-        </div>
-      </div>
-      <div class="account-item">
-        <div class="account-item__header flex">
-          <div class="name">Total Order Value:</div>
-          <div class="count ml-auto text-white">123123123</div>
-        </div>
-        <div class="account-item__field flex items-center">
-          <h4>Profit Stop</h4>
-          <div class="stop flex items-center ml-auto">
-            <i class="icon-minus-empty" @click="profit--"></i>
-            <div class="stop-profit">{{ profit }}</div>
-            <i class="icon-plus-empty" @click="profit++"></i>
-          </div>
-        </div>
-        <div class="account-item__field flex items-center mt-auto">
-          <h4>Loss Stop</h4>
-          <div class="stop flex items-center ml-auto">
-            <i class="icon-minus-empty" @click="loss--"></i>
-            <div class="stop-profit">{{ loss }}</div>
-            <i class="icon-plus-empty" @click="loss++"></i>
-          </div>
-        </div>
+      <div class="account-card empty">
+        <i class="icon-plus"></i>
+        <p>Addwallet</p>
       </div>
     </div>
-    <div class="account-footer flex">
-      <div class="switch flex items-center">
-        <input type="checkbox" id="switch" v-model="support" />
-        <label for="switch"></label>
-        <p class="ml-3.5">Support Overnight Protection</p>
+    <div class="account-sidebar ml-auto">
+      <div class="account-user">
+        <div class="account-user__img">
+          <i class="icon-user"></i>
+        </div>
+        <div class="account-user__field">
+          <div class="lable">Login</div>
+          <div class="value">huanghe 123</div>
+        </div>
+        <div class="account-user__field mt-4">
+          <div class="lable">Title</div>
+          <div class="password flex items-center">
+            <div class="value">{{ notPassword }}</div>
+            <i class="cursor-pointer ml-auto"
+              :class="[ notEye ? 'icon-not-eye' : 'icon-eye']"
+              @click="notEye = !notEye"
+            ></i>
+          </div>
+        </div>
       </div>
-      <div class="account-footer__btn flex ml-auto">
-        <button class="btn btn-blue py-2.5 px-8">Place Call Order</button>
-        <button class="btn btn-yellow ml-5 py-2.5 px-8">Place Put Order</button>
+      <div class="account-collapses">
+        <div class="account-collapses__item">
+          <i class="icon-tools"></i>
+          <div class="name">自 资金明细</div>
+          <i class="icon-arrow ml-auto"></i>
+        </div>
+        <div class="account-collapses__item">
+          <i class="icon-settings"></i>
+          <div class="name">个人设置</div>
+          <i class="icon-arrow ml-auto"></i>
+        </div>
+        <div class="account-collapses__item">
+          <i class="icon-setup"></i>
+          <div class="name">交易设置</div>
+          <i class="icon-arrow ml-auto"></i>
+        </div>
+        <div class="account-collapses__item">
+          <i class="icon-help"></i>
+          <div class="name">帮助中心</div>
+          <i class="icon-arrow ml-auto"></i>
+        </div>
+        <div class="account-collapses__item">
+          <i class="icon-box"></i>
+          <div class="name">邀请返佣</div>
+          <i class="icon-arrow ml-auto"></i>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppSelect from '@/components/ui/AppSelect'
 
 export default {
   name: 'Account',
   data: () => ({
-    support: false,
-    multiple: 'x10',
-    multipleOptions: ['x10', 'x20', 'x30'],
-    profit: 0,
-    loss: 0
+    cards: 5,
+    notEye: true,
+    password: '12345678'
   }),
-  components: {
-    AppSelect
-  },
-  methods: {
-    selectMultiple (option) {
-      this.multiple = option
+  computed: {
+    notPassword () {
+      return this.notEye
+        ? this.password.substring(0, 2) + this.password.replace(/./gm, '*').slice(0, 4) + this.password.slice(-2)
+        : this.password
     }
   }
 }

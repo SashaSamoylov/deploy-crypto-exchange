@@ -29,6 +29,15 @@ const routes = [
     component: () => import('../views/Account.vue')
   },
   {
+    path: '/order',
+    name: 'Order',
+    meta: {
+      layout: 'main',
+      title: 'Buy Put / Call Order'
+    },
+    component: () => import('../views/Order.vue')
+  },
+  {
     path: '/support',
     name: 'Support',
     meta: { layout: 'main' },

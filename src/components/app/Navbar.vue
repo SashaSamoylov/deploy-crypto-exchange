@@ -1,6 +1,13 @@
 <template>
   <nav class="navbar flex">
-    <div class="navbar-left flex items-center">
+    <div v-if="title" class="navbar-left flex items-center">
+      <button class="btn" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
+      <h4 class="ml-8 text-white font-roboto">{{ title }}</h4>
+    </div>
+    <div
+      v-else
+      class="navbar-left flex items-center"
+    >
       <h4>模拟持仓</h4>
       <div class="navbar-left__item ml-10 mr-12 flex items-center">
         <i class="icon-sound"></i>
@@ -80,9 +87,14 @@ export default {
       { name: '简体中文', code: 'Zh' },
       { name: 'English', code: 'En' }
     ],
-    assetsOptions: ['Funding Details', 'Balances', 'Order Details'],
+    assetsOptions: [
+      { name: 'Funding Details', path: '/details' },
+      { name: 'Balances', path: '/balances' },
+      { name: 'Order Details', path: '/order' }
+    ],
     orderOptions: ['Futures', 'Spot'],
-    dropdown: false
+    dropdown: false,
+    title: null
   }),
   components: {
     AppSelect
@@ -95,11 +107,19 @@ export default {
       this.language = option.code
     },
     selectAssets (option) {
-
+      this.$router.push(option.path)
     },
     selectOrder (option) {
 
     }
+  },
+  watch: {
+    $route () {
+      this.title = this.$route.meta.title
+    }
+  },
+  mounted () {
+    this.title = this.$route.meta.title
   }
 }
 </script>
