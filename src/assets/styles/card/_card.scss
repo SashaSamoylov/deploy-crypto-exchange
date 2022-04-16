@@ -10,4 +10,7 @@
     &:nth-child(2) {
         margin-top: 0;
     }
+    @include sm-block() {
+        margin-top: 0;
+    }
 }

@@ -1,6 +1,33 @@
 .trade {
     &-top {
+        @include m-block() {
+            padding: 15px 15px 0;
+            background-color: $gray;
+            flex-wrap: wrap;
+            position: relative;
+            justify-content: center;
+            .btn {
+                border: none;
+                width: 20px;
+                overflow: hidden;
+                position: absolute;
+                top: 24px;
+                left: 15px;
+                padding: 0;
+                i {
+                    font: 18px;
+                    &::before {
+                        color: $white;
+                    }
+                }
+            }
+        }
         &__btns {
+            @include sm-block() {
+                width: 100%;
+                justify-content: space-around;
+                margin-top: 10px;
+            }
             .btn-item {
                 cursor: pointer;
                 font-family: $noto;
@@ -17,6 +44,10 @@
                     background: rgba(81, 118, 207, 0.32);
                     border-radius: 4px;
                     color: $blue;
+                    @include sm-block() {
+                        background-color: transparent;
+                        border-bottom: 1px solid $blue;
+                    }
                 }
             }
         }
@@ -24,8 +55,16 @@
     &-body {
         flex-wrap: wrap;
         justify-content: space-between;
+        flex-direction: row;
+        @include m-block() {
+            padding: 0 15px 15px;
+        }
     }
     &-card {
+        @include sm-block() {
+            width: 100%;
+            margin-bottom: 15px;
+        }
         .card-header {
             display: flex;
             align-items: center;
@@ -54,6 +93,9 @@
                 color: $white;
                 border-radius: 2px;
                 padding: 0 5px;
+            }
+            p {
+                white-space: nowrap;
             }
         }
         .card-footer {

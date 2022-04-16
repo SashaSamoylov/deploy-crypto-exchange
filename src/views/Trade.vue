@@ -1,6 +1,6 @@
 <template>
   <div class="trade">
-    <div class="trade-top py-8 flex items-center">
+    <div class="trade-top md:py-8 flex items-center">
       <button class="btn mr-10"><i class="icon-arrow mr-3"></i>Back</button>
       <div class="trade-top__tabs tabs-btn flex">
         <div class="tab-item px-3"
@@ -10,7 +10,7 @@
           @click="tabBtnActive = tabBtn"
         >{{ tabBtn }}</div>
       </div>
-      <div class="trade-top__btns flex ml-auto">
+      <div class="trade-top__btns flex md:ml-auto">
         <div class="btn-item"
           v-for="btn in btns"
           :key="btn"
@@ -19,6 +19,12 @@
         >{{ btn }}</div>
       </div>
     </div>
+    <div class="m:hidden md:px-4 sm:px-4 s:px-4 flex items-center my-4">
+      <i class="icon-sound"></i>
+      <h5 class="text-gray-light ml-2.5">用BTC可以赚BTC啦! 杠杆高达100倍</h5>
+      <h5 class="text-blue ml-2">查看详情</h5>
+    </div>
+
     <div class="trade-body flex pb-5">
       <div class="trade-card card">
         <div class="card-header">
@@ -26,15 +32,15 @@
           <i class="icon-chart"></i>
         </div>
         <div class="card-body flex">
-          <div class="w-1/2">
+          <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
             <p class="mt-2">数量 0.068 个</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="mb-2">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="text-red text-right mb-2">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
@@ -50,15 +56,15 @@
           <i class="icon-chart"></i>
         </div>
         <div class="card-body flex">
-          <div class="w-1/2">
+          <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
             <p class="mt-2">数量 0.068 个</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="mb-2">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="text-red text-right mb-2">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
@@ -74,15 +80,15 @@
           <i class="icon-chart"></i>
         </div>
         <div class="card-body flex">
-          <div class="w-1/2">
+          <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
             <p class="mt-2">数量 0.068 个</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="mb-2">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="text-red text-right mb-2">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
@@ -98,15 +104,15 @@
           <i class="icon-chart"></i>
         </div>
         <div class="card-body flex">
-          <div class="w-1/2">
+          <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
             <p class="mt-2">数量 0.068 个</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="mb-2">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
-          <div class="w-1/4">
+          <div class="s:w-1/3 w-1/4">
             <p class="text-red text-right mb-2">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
