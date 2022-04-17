@@ -18,10 +18,10 @@
 export default {
   data: () => ({
     links: [
-      { title: '首页', url: '/', icon: 'home', exact: true },
-      { title: '贸易', url: '/trade', icon: 'trade' },
-      { title: '快讯', url: '/news', icon: 'news' },
-      { title: '我的', url: '/account', icon: 'account' },
+      { title: 'Home', url: '/', icon: 'home', exact: true },
+      { title: 'Trade', url: '/trade', icon: 'trade' },
+      { title: 'Order', url: '/order', icon: 'news' },
+      { title: 'Profile', url: '/account', icon: 'account' },
       { title: '客服', url: '/support', icon: 'support' }
     ]
   })
