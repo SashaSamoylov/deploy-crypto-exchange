@@ -2,7 +2,7 @@
     width: 14%;
     min-width: 196px;
     min-height: 100vh;
-    padding: 32px 42px 6px;
+    padding: 32px 12px 6px 42px;
     display: flex;
     flex-direction: column;
     @include l-block() {
@@ -39,6 +39,8 @@
     &-item {
         margin: 15px 0;
         padding: 15px 0;
+        flex-wrap: wrap;
+        cursor: pointer;
         @include m-block() {
             margin: 0;
             flex-direction: column;
@@ -62,6 +64,12 @@
                     color: $blue;
                 }
             }
+            .children {
+                height: auto;
+                opacity: 1;
+                overflow: visible;
+                color: $gray-light;
+            }
         }
         &:last-child {
             margin-top: auto;
@@ -69,6 +77,44 @@
         i {
             @include m-block() {
                 margin: 0 auto 2px;
+            }
+        }
+        .icon-arrow {
+            position: absolute;
+            top: 8px;
+            right: -26px;
+            transform: rotate(-90deg);
+            font-size: 9px;
+        }
+        .children {
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin-left: 30px;
+            transition: all 0.3s;
+            a {
+                padding: 10px 0;
+                &.active {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    &-admin {
+        ul {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .sidebar-item {
+            &.active {
+                color: $gray-light;
+                .icon-arrow {
+                    transform: rotate(90deg) translateY(-2px);
+                    &::before {
+                        color: $gray-light;
+                    }
+                }
             }
         }
     }

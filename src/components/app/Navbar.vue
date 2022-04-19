@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
     <div v-if="title" class="navbar-left title flex items-center">
-      <button class="btn" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
-      <h4 class="md:ml-8 text-white font-roboto">{{ title }}</h4>
+      <button v-if="!$route.meta.admin" class="btn md:mr-8" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
+      <h4 class="text-white font-roboto">{{ title }}</h4>
     </div>
     <div
       v-else

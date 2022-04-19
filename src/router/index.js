@@ -51,6 +51,26 @@ const routes = [
     name: 'Support',
     meta: { layout: 'main' },
     component: () => import('../views/Support.vue')
+  },
+  {
+    path: '/spot',
+    name: 'Spot',
+    meta: {
+      layout: 'main',
+      title: 'Spot',
+      admin: true
+    },
+    component: () => import('../views/Spot.vue')
+  },
+  {
+    path: '/future',
+    name: 'Future',
+    meta: {
+      layout: 'main',
+      title: 'Future',
+      admin: true
+    },
+    component: () => import('../views/Future.vue')
   }
 ]
 

@@ -3,7 +3,9 @@
     <Loader v-if="loading" />
     <div v-else class="app-main-layout flex">
 
-      <Sidebar />
+      <!-- <Sidebar /> -->
+
+      <SidebarAdmin />
 
       <main class="app-content">
 
@@ -20,6 +22,7 @@
 <script>
 import Navbar from '@/components/app/Navbar'
 import Sidebar from '@/components/app/Sidebar'
+import SidebarAdmin from '@/components/app/SidebarAdmin'
 
 export default {
   name: 'main-layout',
@@ -27,7 +30,9 @@ export default {
     loading: false
   }),
   components: {
-    Navbar, Sidebar
+    Navbar,
+    // Sidebar,
+    SidebarAdmin
   }
 }
 </script>

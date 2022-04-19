@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3zpmp9');
-  src:  url('fonts/icomoon.eot?3zpmp9#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3zpmp9') format('truetype'),
-    url('fonts/icomoon.woff?3zpmp9') format('woff'),
-    url('fonts/icomoon.svg?3zpmp9#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?fmobou');
+  src:  url('fonts/icomoon.eot?fmobou#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?fmobou') format('truetype'),
+    url('fonts/icomoon.woff?fmobou') format('woff'),
+    url('fonts/icomoon.svg?fmobou#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -123,6 +123,30 @@
 }
 .icon-account:before {
   content: "\e914";
+  color: #888b9a;
+}
+.icon-security:before {
+  content: "\e920";
+  color: #5176cf;
+}
+.icon-overview:before {
+  content: "\e921";
+  color: #888b9a;
+}
+.icon-chek:before {
+  content: "\e922";
+  color: #64a354;
+}
+.icon-password:before {
+  content: "\e923";
+  color: #888b9a;
+}
+.icon-verify:before {
+  content: "\e924";
+  color: #888b9a;
+}
+.icon-funding:before {
+  content: "\e925";
   color: #888b9a;
 }
 .icon-door:before {
