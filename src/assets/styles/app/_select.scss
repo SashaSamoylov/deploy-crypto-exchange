@@ -58,4 +58,43 @@
             }
         }
     }
+    &-field {
+        .lable {
+            font-family: $roboto;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: $gray-light;
+            margin-bottom: 4px;
+        }
+        .select {
+            min-width: 172px;
+            height: 32px;
+            border: 1px solid rgba($color: $white, $alpha: 0.2);
+            border-radius: 4px;
+            padding: 6px 16px;
+            &.active {
+                .icon-arrow {
+                    transform: rotate(90deg);
+                }
+            }
+            .icon-arrow {
+                margin-left: auto;
+                font-size: 12px;
+                transform: rotate(-90deg);
+            }
+            .name {
+                font-family: $roboto;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+                color: $white;
+            }
+            .options {
+                width: 100%;
+            }
+        }
+    }
 }

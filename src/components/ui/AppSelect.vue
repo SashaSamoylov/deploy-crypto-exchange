@@ -6,6 +6,7 @@
   >
     <div class="select-lable flex items-center cursor-pointer">
       <span class="name mr-2">{{ lable }}</span>
+      <span v-if="lableTwo" class="name ml-2">{{ lableTwo }}</span>
       <i class="icon-arrow"></i>
     </div>
 
@@ -26,7 +27,7 @@ import clickOutsideMixin from '@/mixins/clickOutside.mixin'
 export default {
   name: 'CustomSelect',
   mixins: [clickOutsideMixin],
-  props: ['options', 'lable'],
+  props: ['options', 'lable', 'lableTwo'],
   data: () => ({
     isActive: false
   }),

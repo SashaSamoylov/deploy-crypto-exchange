@@ -71,6 +71,16 @@ const routes = [
       admin: true
     },
     component: () => import('../views/Future.vue')
+  },
+  {
+    path: '/deposit',
+    name: 'Deposit',
+    meta: {
+      layout: 'main',
+      title: 'Deposit History',
+      admin: true
+    },
+    component: () => import('../views/Deposit.vue')
   }
 ]
 
