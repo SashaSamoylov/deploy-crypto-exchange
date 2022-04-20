@@ -3,9 +3,8 @@
     <Loader v-if="loading" />
     <div v-else class="app-main-layout flex">
 
-      <!-- <Sidebar /> -->
-
-      <SidebarAdmin />
+      <SidebarAdmin v-if="showSidebar"/>
+      <Sidebar v-else />
 
       <main class="app-content">
 
@@ -27,12 +26,18 @@ import SidebarAdmin from '@/components/app/SidebarAdmin'
 export default {
   name: 'main-layout',
   data: () => ({
-    loading: false
+    loading: false,
+    showSidebarAdmin: ['Spot', 'Deposit']
   }),
   components: {
     Navbar,
-    // Sidebar,
+    Sidebar,
     SidebarAdmin
+  },
+  computed: {
+    showSidebar () {
+      return this.showSidebarAdmin.includes(this.$route.name)
+    }
   }
 }
 </script>

@@ -92,7 +92,10 @@ export default {
       { name: 'Balances', path: '/balances' },
       { name: 'Order Details', path: '/order' }
     ],
-    orderOptions: ['Futures', 'Spot'],
+    orderOptions: [
+      { name: 'Futures', path: '/future' },
+      { name: 'Spot', path: '/spot' }
+    ],
     dropdown: false,
     title: null
   }),
@@ -110,7 +113,7 @@ export default {
       this.$router.push(option.path)
     },
     selectOrder (option) {
-
+      this.$router.push(option.path)
     }
   },
   watch: {
