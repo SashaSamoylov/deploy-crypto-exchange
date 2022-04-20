@@ -9,6 +9,12 @@
 @import 'reset';
 @import 'base';
 
+//Button
+@import 'button/button';
+
+//Checkbox
+@import 'app/checkbox';
+
 //Sidebar
 @import 'app/sidebar';
 
@@ -33,8 +39,11 @@
 //Details
 @import 'details/details';
 
-//Button
-@import 'button/button';
+//Spot
+@import 'spot/spot';
+
+//Pagination
+@import 'app/pagination';
 
 //Select
 @import 'app/select';

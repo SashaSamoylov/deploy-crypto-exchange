@@ -1,6 +1,5 @@
 .btn {
     border: 1px solid $gray-light;
-    box-sizing: border-box;
     border-radius: 4px;
     font-family: $roboto;
     font-style: normal;
@@ -51,6 +50,10 @@
     &.btn-border__blue {
         border: 1px solid $blue;
         color: $blue;
+    }
+    &.btn-border__yellow {
+        border: 1px solid $yellow;
+        color: $yellow;
     }
 }
 

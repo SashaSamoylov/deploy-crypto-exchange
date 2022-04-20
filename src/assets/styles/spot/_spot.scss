@@ -1,0 +1,115 @@
+.spot {
+    &-top {
+        button {
+            font-family: $roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 140%;
+            padding: 5px 24px;
+            margin-left: 22px;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+    &-hesder {
+        background-color: $gray;
+        border-radius: 4px;
+        padding: 24px;
+        h4 {
+            font-family: $roboto;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: $gray-light;
+        }
+        &__title {
+            font-family: $roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 140%;
+            color: $white;
+            span {
+                font-size: 15px;
+            }
+        }
+    }
+    &-table {
+        background-color: $gray;
+        border-radius: 4px;
+        padding: 24px;
+        &__top {
+            margin-bottom: 17px;
+            .table-search {
+                input[type=text] {
+                    background-color: $gray;
+                    border: 1px solid rgba($color: $white, $alpha: 0.2);
+                    padding: 6px 16px;
+                    border-radius: 4px;
+                    font-family: $roboto;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: $gray-light;
+                    min-width: 303px;
+                    &::placeholder {
+                        font-family: $roboto;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 140%;
+                        color: $gray-light;
+                    }
+                }
+            }
+            .table-checkbox {
+                label {
+                    font-family: $roboto;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: $gray-light;
+                }
+            }
+        }
+        .table {
+            width: 100%;
+            thead {
+                background-color: rgba(16, 17, 22, 0.35);
+                border-radius: 2px;
+                th {
+                    padding: 7px 0 7px 15px;
+                    font-family: $roboto;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 140%;
+                    color: $gray-light;
+                    text-align: left;
+                }
+            }
+            tbody {
+                tr {
+                    border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+                    td {
+                        padding: 16px 0 16px 15px;
+                        font-family: $roboto;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 140%;
+                        color: $white;
+                        &:first-child {
+                            padding: 16px 0 16px 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
