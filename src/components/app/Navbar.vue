@@ -6,17 +6,17 @@
     </div>
     <div
       v-else
-      class="navbar-left lg:flex hidden items-center"
+      class="navbar-left md:flex hidden items-center"
     >
       <h4>模拟持仓</h4>
-      <div class="navbar-left__item xl:ml-10 ml-5 xl:mr-12 mr-5 flex items-center">
+      <div class="navbar-left__item xl:ml-10 ml-5 xl:mr-12 mr-5 lg:flex hidden items-center">
         <i class="icon-sound"></i>
         <h5 class="text-gray-light ml-2.5">用BTC可以赚BTC啦! 杠杆高达100倍</h5>
       </div>
-      <h5 class="text-blue">查看详情</h5>
+      <h5 class="text-blue lg:block hidden">查看详情</h5>
     </div>
 
-    <ul class="navbar-right lg:flex hidden ml-auto items-center">
+    <ul class="navbar-right md:flex hidden ml-auto items-center">
 
       <AppSelect
         class="center"
@@ -89,7 +89,7 @@ export default {
     ],
     assetsOptions: [
       { name: 'Funding Details', path: '/details' },
-      { name: 'Balances', path: '/balances' },
+      { name: 'Balances', path: '/deposit' },
       { name: 'Order Details', path: '/order' }
     ],
     orderOptions: [
