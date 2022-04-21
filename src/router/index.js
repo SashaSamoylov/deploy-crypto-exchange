@@ -81,6 +81,26 @@ const routes = [
       admin: true
     },
     component: () => import('../views/Deposit.vue')
+  },
+  {
+    path: '/security',
+    name: 'Security',
+    meta: {
+      layout: 'main',
+      title: 'Security',
+      admin: true
+    },
+    component: () => import('../views/Security.vue')
+  },
+  {
+    path: '/overview',
+    name: 'Overview',
+    meta: {
+      layout: 'main',
+      title: 'Overview',
+      admin: true
+    },
+    component: () => import('../views/Overview.vue')
   }
 ]
 

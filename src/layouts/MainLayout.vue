@@ -1,14 +1,18 @@
 <template>
   <div>
     <Loader v-if="loading" />
-    <div v-else class="app-main-layout flex">
+    <div v-else class="app-main-layout flex" :class="{'show-sidebar': showSidebar}">
 
-      <SidebarAdmin v-if="showSidebar"/>
+      <SidebarAccount v-if="showSidebarAccount" @close="showSidebar = false" />
+      <SidebarAdmin v-else-if="showSidebarAdmin"/>
       <Sidebar v-else />
 
-      <main class="app-content">
+      <main class="app-content" :class="{'app-content__account': showSidebarAccount}">
 
-        <Navbar />
+        <Navbar
+          :account="showSidebarAccount"
+          @show="showSidebar = true"
+        />
 
         <div class="app-page">
           <router-view />
@@ -22,21 +26,28 @@
 import Navbar from '@/components/app/Navbar'
 import Sidebar from '@/components/app/Sidebar'
 import SidebarAdmin from '@/components/app/SidebarAdmin'
+import SidebarAccount from '@/components/app/SidebarAccount'
 
 export default {
   name: 'main-layout',
   data: () => ({
     loading: false,
-    showSidebarAdmin: ['Spot', 'Deposit']
+    sidebarAdmin: ['Spot', 'Deposit'],
+    sidebarAccount: ['Overview', 'Security'],
+    showSidebar: false
   }),
   components: {
     Navbar,
     Sidebar,
-    SidebarAdmin
+    SidebarAdmin,
+    SidebarAccount
   },
   computed: {
-    showSidebar () {
-      return this.showSidebarAdmin.includes(this.$route.name)
+    showSidebarAdmin () {
+      return this.sidebarAdmin.includes(this.$route.name)
+    },
+    showSidebarAccount () {
+      return this.sidebarAccount.includes(this.$route.name)
     }
   }
 }

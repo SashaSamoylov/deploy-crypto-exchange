@@ -47,6 +47,11 @@
         color: $white;
         font-size: 15px;
     }
+    &.btn-gray-light {
+        background-color: $gray-light;
+        border: 1px solid $gray-light;
+        color: $white;
+    }
     &.btn-border__blue {
         border: 1px solid $blue;
         color: $blue;

@@ -2,6 +2,7 @@
   <nav class="navbar">
     <div v-if="title" class="navbar-left title flex items-center">
       <button v-if="!$route.meta.admin" class="btn md:mr-8" @click="$router.go(-1)"><i class="icon-arrow mr-3"></i>Back</button>
+      <i v-if="account" class="icon-burger lg:hidden block mr-4" @click="$emit('show')"></i>
       <h4 class="text-white font-roboto">{{ title }}</h4>
     </div>
     <div
@@ -79,6 +80,7 @@ import AppSelect from '@/components/ui/AppSelect'
 
 export default {
   name: 'Navbar',
+  props: ['account'],
   mixins: [clickOutsideMixin],
   data: () => ({
     name: 'Kevine Harry',
