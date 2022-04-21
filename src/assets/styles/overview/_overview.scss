@@ -1,9 +1,22 @@
 .overview {
     padding: 39px 0 32px;
+    @include m-block() {
+        padding: 20px 20px 0;
+    }
+    &-body {
+        .row {
+            @include m-block() {
+                flex-wrap: wrap;
+            }
+        }
+    }
     &-top {
         display: flex;
         flex-direction: row;
         margin-bottom: 32px;
+        &__user {
+            flex-wrap: wrap;
+        }
         .user {
             &-img {
                 width: 40px;
@@ -31,6 +44,11 @@
                 }
             }
             &-ip {
+                @include sm-block() {
+                    width: 100%;
+                    margin-left: 58px !important;
+                    margin-top: 10px;
+                }
                 .verified {
                     background-color: rgba(136, 139, 154, 0.4);
                     border-radius: 2px;
@@ -44,6 +62,7 @@
                     color: $gray-light;
                     display: flex;
                     align-items: center;
+                    width: fit-content;
                     .icon-plus-btn {
                         transform: rotate(45deg);
                         margin-right: 5px;
@@ -58,7 +77,11 @@
     &-header {
         position: relative;
         display: flex;
+        flex-wrap: wrap;
         padding: 24px 24px 26px;
+        @include sm-block() {
+            padding: 0 30px 24px;
+        }
         &__bg {
             position: absolute;
             top: 0;
@@ -66,6 +89,17 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            .mobile {
+                display: none;
+            }
+            img {
+                @include sm-block() {
+                    display: none;
+                    &.mobile {
+                        display: block;
+                    }
+                }
+            }
         }
         &__content {
             position: relative;
@@ -76,6 +110,10 @@
             font-size: 15px;
             line-height: 140%;
             color: $gray-light;
+            @include m-block() {
+                order: 2;
+                width: 100%;
+            }
             h3 {
                 font-family: $roboto;
                 font-style: normal;
@@ -90,6 +128,9 @@
                 display: flex;
                 align-items: center;
                 color: $white;
+                @include sm-block() {
+                    flex-wrap: wrap;
+                }
                 &-items {
                     display: flex;
                     position: relative;
@@ -106,6 +147,9 @@
                     .item {
                         margin-left: 74px;
                         z-index: 2;
+                        @include sm-block() {
+                            margin-left: 57px;
+                        }
                         &:first-child {
                             margin-left: 0;
                         }
@@ -132,6 +176,9 @@
                                 position: absolute;
                                 top: 50%;
                                 transform: translateY(-50%);
+                                @include sm-block() {
+                                    background-color: #07164C;
+                                }
                             }
                             &::before {
                                 left: -12px;
@@ -149,8 +196,17 @@
                 }
                 &-btn {
                     margin-left: 74px;
+                    @include sm-block() {
+                        width: 100%;
+                        margin-left: 0;
+                        margin-top: 23px;
+                    }
                     button {
                         padding: 9px 24px;
+                        @include sm-block() {
+                            width: 100%;
+                            justify-content: center;
+                        }
                     }
                 }
             }
@@ -162,6 +218,16 @@
             position: absolute;
             top: -55px;
             right: 63px;
+            @include m-block() {
+                width: 185px;
+                height: 185px;
+                position: relative;
+                order: 1;
+                top: inherit;
+                right: inherit;
+                margin-top: -30px;
+                margin-left: -10px;
+            }
         }
     }
     &-details {
@@ -169,6 +235,9 @@
         background-color: $gray;
         border-radius: 4px;
         padding: 24px 0;
+        @include m-block() {
+            width: 100%;
+        }
         &__top {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 0 24px;
@@ -191,6 +260,12 @@
                     button {
                         margin-right: 22px;
                         padding: 5px 24px;
+                        @include sm-block() {
+                            display: none;
+                            &:first-child {
+                                display: block;
+                            }
+                        }
                     }
                     i {
                         cursor: pointer;
@@ -224,8 +299,14 @@
             padding: 40px 24px 0;
             display: flex;
             align-items: center;
+            @include sm-block() {
+                flex-wrap: wrap;
+            }
             .balance {
                 width: 25%;
+                @include sm-block() {
+                    width: 100%;
+                }
                 h3 {
                     font-family: 'Roboto Condensed';
                     font-style: normal;
@@ -242,6 +323,10 @@
                     }
                     &__item {
                         margin-left: 30px;
+                        @include sm-block() {
+                            align-items: center;
+                            margin-left: 0;
+                        }
                         &:first-child {
                             margin-left: 0;
                         }
@@ -253,6 +338,9 @@
                             line-height: 140%;
                             color: $gray-light;
                             white-space: nowrap;
+                            @include sm-block() {
+                                margin-right: 12px;
+                            }
                         }
                         span {
                             font-family: $roboto;
@@ -267,6 +355,11 @@
                 &-chart {
                     width: 75%;
                     padding-left: 60px;
+                    @include sm-block() {
+                        width: 100%;
+                        padding-left: 0;
+                        margin-top: 24px;
+                    }
                     &__circle {
                         width: 98px;
                         height: 98px;
@@ -310,6 +403,10 @@
     &-news {
         width: calc(100% / 3 - 16px);
         margin-left: auto;
+        @include m-block() {
+            width: 100%;
+            margin-top: 24px;
+        }
         &__title {
             margin-bottom: 24px;
             h3 {
@@ -349,6 +446,13 @@
         width: calc(100% / 3 - 16px);
         background-color: $gray;
         border-radius: 4px;
+        @include m-block() {
+            width: 100%;
+            margin-bottom: 24px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
         &__header {
             display: flex;
             align-items: center;

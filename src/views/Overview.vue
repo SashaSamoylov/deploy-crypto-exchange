@@ -6,9 +6,9 @@
             <img src="img/user.png" alt="">
           </div>
           <div class="user-info">
-            <div class="mb-1.5 flex items-end">
+            <div class="mb-1.5 md:flex block items-end">
               <div class="name">huanghe123</div>
-              <div class="ml-3">UserID : 2531305</div>
+              <div class="md:ml-3">UserID : 2531305</div>
             </div>
             <div class="user-login">
               Last Login : 2022-04-12 14:05:49
@@ -26,6 +26,7 @@
       <div class="overview-header">
         <div class="overview-header__bg">
           <img src="img/overview_bg.png" alt="">
+          <img class="mobile" src="img/overview_mob_bg.png" alt="">
         </div>
         <div class="overview-header__content">
           <h3>Welcome! Dear Bitopers</h3>
@@ -74,15 +75,17 @@
               </div>
             </div>
             <div class="overview-details__body">
-              <div class="balance">
-                <h3>Available Balances</h3>
-                <div class="balance-count mt-4">7.32 <span>≈ ¥ 46.5552</span></div>
-                <div class="flex mt-4">
-                  <div class="balance-count__item">
+              <div class="balance md:block flex md:items-start items-end">
+                <div>
+                  <h3>Available Balances</h3>
+                  <div class="balance-count mt-4">7.32 <span>≈ ¥ 46.5552</span></div>
+                </div>
+                <div class="md:flex block mt-4 md:ml-0 ml-auto">
+                  <div class="balance-count__item md:block flex">
                     <h4>Occupied</h4>
                     <span>0</span>
                   </div>
-                  <div class="balance-count__item">
+                  <div class="balance-count__item md:block flex">
                     <h4>Red Envelopes</h4>
                     <span>6.29</span>
                   </div>
@@ -190,6 +193,30 @@
             <div class="overview-block__header ">
               <h4>Current Level</h4>
               <i class="icon-arrow rotate-180 ml-auto"></i>
+            </div>
+            <div class="overview-block__body">
+              <div class="flex mb-5">
+                <div>
+                  <p class="text-xs">Accumulated Commission</p>
+                  <div><span class="text-white mr-1.5 text-lg">0</span> USDT</div>
+                </div>
+                <div class="ml-7">
+                  <p class="text-xs">Commission ratio</p>
+                  <div><span class="text-white mr-1.5 text-lg">5</span> %</div>
+                </div>
+              </div>
+              <div class="flex mb-2 text-white">
+                <h5>Total Referees</h5>
+                <span class="ml-auto">0</span>
+              </div>
+              <div class="flex mb-2 text-white">
+                <h5>Active Traders</h5>
+                <span class="ml-auto">0</span>
+              </div>
+              <div class="flex text-white">
+                <h5>Newly Referred</h5>
+                <span class="ml-auto">0</span>
+              </div>
             </div>
           </div>
         </div>
