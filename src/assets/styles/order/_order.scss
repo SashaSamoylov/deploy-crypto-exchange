@@ -1,7 +1,7 @@
 .order {
     padding-top: 48px;
     @include l-block() {
-        padding: 15px;
+        padding: 20px;
     }
     &-body {
         flex-wrap: wrap;
@@ -105,7 +105,12 @@
             padding: 13px 20px;
             min-height: 72px;
             @include l-block() {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+            }
+            &:last-child {
+                @include l-block() {
+                    margin-bottom: 0;
+                }
             }
             .lable {
                 font-family: $roboto;
