@@ -12,7 +12,7 @@
                 overflow: hidden;
                 position: absolute;
                 top: 24px;
-                left: 15px;
+                left: 20px;
                 padding: 0;
                 i {
                     font: 18px;
@@ -57,13 +57,21 @@
         justify-content: space-between;
         flex-direction: row;
         @include m-block() {
-            padding: 0 15px 15px;
+            padding: 0 0 15px;
         }
     }
     &-card {
         @include sm-block() {
+            border-radius: 0;
             width: 100%;
             margin-bottom: 15px;
+            padding: 16px 20px;
+            display: none;
+        }
+        &:first-child {
+            @include sm-block() {
+                display: block;
+            }
         }
         .card-header {
             display: flex;
@@ -84,6 +92,11 @@
         }
         .card-body {
             padding: 20px 0;
+            @include sm-block() {
+                padding: 10px 0 16px;
+                font-size: 13px;
+                line-height: 140%;
+            }
             .count {
                 font-family: $inter;
                 font-style: normal;

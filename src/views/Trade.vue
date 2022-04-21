@@ -19,7 +19,7 @@
         >{{ btn }}</div>
       </div>
     </div>
-    <div class="m:hidden md:px-4 sm:px-4 s:px-4 flex items-center my-4">
+    <div class="m:hidden md:px-4 sm:px-4 s:px-5 flex items-center my-4">
       <i class="icon-sound"></i>
       <h5 class="text-gray-light ml-2.5">用BTC可以赚BTC啦! 杠杆高达100倍</h5>
       <h5 class="text-blue ml-2">查看详情</h5>
@@ -30,24 +30,25 @@
         <div class="card-header">
           <div class="card-header__title">BTC/USDT 43591.13</div>
           <i class="icon-chart"></i>
+          <i class="icon-arrow ml-auto rotate-180 sm:hidden block"></i>
         </div>
         <div class="card-body flex">
           <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
-            <p class="mt-2">数量 0.068 个</p>
+            <p class="md:mt-2 mt-1">数量 0.068 个</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="mb-2">买入价 43608.33</p>
+            <p class="md:mb-2 mb-1">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="text-red text-right mb-2">-1.17</p>
+            <p class="text-red text-right md:mb-2 mb-1">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
         </div>
         <div class="card-footer flex">
-          <button class="btn ml-auto">止盈止损</button>
-          <button class="btn ml-2.5">平仓</button>
+          <button class="btn ml-auto max-h-8">止盈止损</button>
+          <button class="btn ml-2.5 max-h-8">平仓</button>
         </div>
       </div>
       <div class="trade-card card">
@@ -58,20 +59,20 @@
         <div class="card-body flex">
           <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
-            <p class="mt-2">数量 0.068 个</p>
+            <p class="md:mt-2 mt-1">数量 0.068 个</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="mb-2">买入价 43608.33</p>
+            <p class="md:mb-2 mb-1">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="text-red text-right mb-2">-1.17</p>
+            <p class="text-red text-right md:mb-2 mb-1">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
         </div>
         <div class="card-footer flex">
-          <button class="btn ml-auto">止盈止损</button>
-          <button class="btn ml-2.5">平仓</button>
+          <button class="btn ml-auto max-h-8">止盈止损</button>
+          <button class="btn ml-2.5 max-h-8">平仓</button>
         </div>
       </div>
       <div class="trade-card card">
@@ -82,20 +83,20 @@
         <div class="card-body flex">
           <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
-            <p class="mt-2">数量 0.068 个</p>
+            <p class="md:mt-2 mt-1">数量 0.068 个</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="mb-2">买入价 43608.33</p>
+            <p class="md:mb-2 mb-1">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="text-red text-right mb-2">-1.17</p>
+            <p class="text-red text-right md:mb-2 mb-1">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
         </div>
         <div class="card-footer flex">
-          <button class="btn ml-auto">止盈止损</button>
-          <button class="btn ml-2.5">平仓</button>
+          <button class="btn ml-auto max-h-8">止盈止损</button>
+          <button class="btn ml-2.5 max-h-8">平仓</button>
         </div>
       </div>
       <div class="trade-card card">
@@ -106,20 +107,20 @@
         <div class="card-body flex">
           <div class="s:w-1/3 w-1/2">
             <span class="bg-green count">数量</span>
-            <p class="mt-2">数量 0.068 个</p>
+            <p class="md:mt-2 mt-1">数量 0.068 个</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="mb-2">买入价 43608.33</p>
+            <p class="md:mb-2 mb-1">买入价 43608.33</p>
             <p>止损价 42902.44</p>
           </div>
           <div class="s:w-1/3 w-1/4">
-            <p class="text-red text-right mb-2">-1.17</p>
+            <p class="text-red text-right md:mb-2 mb-1">-1.17</p>
             <p class="text-red text-right">-1.95%</p>
           </div>
         </div>
         <div class="card-footer flex">
-          <button class="btn ml-auto">止盈止损</button>
-          <button class="btn ml-2.5">平仓</button>
+          <button class="btn ml-auto max-h-8">止盈止损</button>
+          <button class="btn ml-2.5 max-h-8">平仓</button>
         </div>
       </div>
     </div>

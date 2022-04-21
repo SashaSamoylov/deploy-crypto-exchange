@@ -23,6 +23,9 @@ h2 {
 .w-fit {
     width: fit-content;
 }
+.rotate-180 {
+    transform: rotate(180deg);
+}
 .bg-base {
     background-color: $gray;
     border-radius: 4px;
