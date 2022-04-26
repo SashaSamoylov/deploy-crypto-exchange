@@ -2,7 +2,7 @@
   <div class="security-code mt-auto mb-auto">
     <h3>{{ title }}</h3>
     <p>We just send you a verify code. Check your inbox to get them.</p>
-    <form class="mt-8">
+    <form class="mt-8" @submit.prevent="submitSecurityCode">
       <div class="codes">
         <div
           v-for="(code, idx) in 4"
@@ -30,6 +30,11 @@ export default {
   props: ['title'],
   data: () => ({
     codeArray: []
-  })
+  }),
+  methods: {
+    submitSecurityCode () {
+      this.$emit('submitCode', this.codeArray.join(''))
+    }
+  }
 }
 </script>

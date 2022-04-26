@@ -21,7 +21,7 @@ import SecurityCode from '@/components/Registration/SecurityCode'
 export default {
   name: 'SignUp',
   data: () => ({
-    signUpPage: 'SecurityCode'
+    signUpPage: 'SignUpProfile'
   }),
   components: {
     SidebarLogin,
