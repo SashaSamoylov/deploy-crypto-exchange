@@ -101,6 +101,18 @@ const routes = [
       admin: true
     },
     component: () => import('../views/Overview.vue')
+  },
+  {
+    path: '/sign-up',
+    name: 'SignUp',
+    meta: { layout: 'empty' },
+    component: () => import('../views/SignUp.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    meta: { layout: 'empty' },
+    component: () => import('../views/Login.vue')
   }
 ]
 
