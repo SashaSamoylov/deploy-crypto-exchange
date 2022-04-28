@@ -99,6 +99,14 @@ const routes = [
     component: () => import('../views/Withdrawl.vue')
   },
   {
+    path: '/withdrawl-account',
+    name: 'WithdrawlAccount',
+    meta: {
+      layout: 'main'
+    },
+    component: () => import('../views/WithdrawlAccount.vue')
+  },
+  {
     path: '/security',
     name: 'Security',
     meta: {
