@@ -76,11 +76,27 @@ const routes = [
     path: '/deposit',
     name: 'Deposit',
     meta: {
+      layout: 'main'
+    },
+    component: () => import('../views/Deposit.vue')
+  },
+  {
+    path: '/deposit-history',
+    name: 'DepositHistory',
+    meta: {
       layout: 'main',
       title: 'Deposit History',
       admin: true
     },
-    component: () => import('../views/Deposit.vue')
+    component: () => import('../views/DepositHistory.vue')
+  },
+  {
+    path: '/withdrawl',
+    name: 'Withdrawl',
+    meta: {
+      layout: 'main'
+    },
+    component: () => import('../views/Withdrawl.vue')
   },
   {
     path: '/security',

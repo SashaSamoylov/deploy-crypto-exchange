@@ -32,7 +32,7 @@ export default {
   name: 'main-layout',
   data: () => ({
     loading: false,
-    sidebarAdmin: ['Spot', 'Deposit'],
+    sidebarAdmin: ['Spot', 'DepositHistory'],
     sidebarAccount: ['Overview', 'Security'],
     showSidebar: false
   }),
