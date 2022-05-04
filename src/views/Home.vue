@@ -84,24 +84,27 @@ export default {
   },
   mounted () {
     axios.post('https://test-24mex.happylucky.online:9001/get_token',
-      { user: '1@mail.com', password: '1' }
+      {
+        headers: { 'Content-Type': 'application/json' },
+        body: { user: '1@mail.com', password: '1' }
+      }
     ).then(res => {
       console.log('response-------', res.data)
       return res.data
     }).catch(error => {
       console.log(error)
-    if (error.response) {
+      if (error.response) {
       // Request made and server responded
-      console.log('response1----', error.response.data)
-      console.log('response2-------', error.response.status)
-      console.log('response3-------------', error.response.headers)
-    } else if (error.request) {
+        console.log('response1----', error.response.data)
+        console.log('response2-------', error.response.status)
+        console.log('response3-------------', error.response.headers)
+      } else if (error.request) {
       // The request was made but no response was received
-      console.log('errorrequiest---------', error.request)
-    } else {
+        console.log('errorrequiest---------', error.request)
+      } else {
       // Something happened in setting up the request that triggered an Error
-      console.log('Error', error.message)
-    }
+        console.log('Error', error.message)
+      }
     })
   }
 }
