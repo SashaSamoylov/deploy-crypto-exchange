@@ -6,23 +6,41 @@
 
 <script>
 import { Chart, registerables } from 'chart.js'
+import {
+  mapGetters,
+  mapActions
+} from 'vuex'
 Chart.register(...registerables)
 
 export default {
   name: 'Chart',
+  data: () => ({
+    number: 0,
+    chart: null
+  }),
+  computed: {
+    ...mapGetters('app', ['chartData', 'chartDate'])
+  },
+  methods: {
+    ...mapActions('app', ['addChartData', 'addChartDate'])
+  },
   mounted () {
+    console.log(this.number++)
     const ctx = this.$refs.chart.getContext('2d')
     const gradient = ctx.createLinearGradient(0, 0, 0, 400)
     gradient.addColorStop(0, 'rgba(237, 152, 59, 0.3)')
     gradient.addColorStop(1, 'rgba(237, 152, 59, 0)')
 
-    const chart = new Chart(this.$refs.chart, {
+    const self = this
+    console.log('chartData--------', this.chartData)
+
+    this.chart = new Chart(this.$refs.chart, {
       type: 'line',
       data: {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8],
+        labels: self.chartDate,
         datasets: [{
           label: 'Test',
-          data: [30, 40, 25, 30, 25, 20, 25, 35, 45],
+          data: self.chartData,
           backgroundColor: gradient,
           borderColor: '#ED983B',
           borderWidth: 2,
@@ -35,7 +53,7 @@ export default {
         maintainAspectRatio: false,
         scales: {
           x: {
-            position: 'top',
+            position: 'bottom',
             grid: {
               drawBorder: true,
               color: 'rgba(255, 255, 255, 0.1)'
@@ -51,6 +69,12 @@ export default {
         }
       }
     })
+
+    setInterval(() => {
+      // self.addChartData(this.number++)
+      // self.addChartDate(this.number++)
+      this.chart.update()
+    }, 1000)
   }
 }
 </script>

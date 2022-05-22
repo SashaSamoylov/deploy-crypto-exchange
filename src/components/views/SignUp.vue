@@ -55,11 +55,7 @@ export default {
           if (this.signUpPage === 'SecurityCode') {
             this.confirmSecurity(false)
           }
-          this.receiveVerificationCode().then((res) => {
-            if (res.status === 200) {
-              // this.error = res.data
-            }
-          })
+          this.receiveVerificationCode()
         } else {
           this.error = res.data
         }

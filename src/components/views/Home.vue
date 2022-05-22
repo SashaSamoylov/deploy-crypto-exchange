@@ -97,8 +97,7 @@ export default {
     connection: null,
     currencyInfo: null,
     changedPrice: 0,
-    changedPercent: 0,
-    currencyType: ''
+    changedPercent: 0
   }),
   components: {
     AppChart,
@@ -106,15 +105,21 @@ export default {
   },
 
   computed: {
-    ...mapGetters('app', ['currency', 'currencySocket'])
+    ...mapGetters('app', ['currency'])
   },
 
   methods: {
-    ...mapActions('app', ['setCurrency', 'setCurrencyInfo', 'addChartData', 'addChartDate', 'setBTCbuyprice', 'setETHbuyprice', 'setCurrencySocket']),
+    ...mapActions('app', ['setCurrency', 'setCurrencyInfo', 'addChartData', 'addChartDate']),
     ...mapActions('auth', ['clearToken', 'logout']),
 
     selectCurrencies (option) {
-      this.currencyType = option.replace('/', '')
+      const oldcurrency = this.currency.replace('/', '')
+      const newcurrency = option.replace('/', '')
+      if (this.connection.readyState === this.connection.OPEN) {
+        this.connection.send(JSON.stringify({ event: 'unsubscribe', currency_type: oldcurrency }))
+        this.connection.send(JSON.stringify({ event: 'unsubscribe', currency_type: newcurrency }))
+        this.connection.send(JSON.stringify({ event: 'subscribe', currency_type: newcurrency }))
+      }
       this.setCurrency(option)
       this.changedPrice = 0
       this.changedPercent = 0
@@ -131,35 +136,22 @@ export default {
       const self = this
 
       this.connection.onmessage = function (event) {
-        console.log('efefef', self.currency)
         if (event && event.data.includes('Error')) {
           console.log(event.data)
-          self.logout()
+          // self.logout()
         } else if (event && event.data.includes('opened')) {
-          if (!this.currencySocket) {
-            self.connection.send(JSON.stringify({ event: 'subscribe', currency_type: 'BTCUSDT' }))
-            self.connection.send(JSON.stringify({ event: 'subscribe', currency_type: 'ETHUSDT' }))
-          }
-          self.setCurrencySocket(true)
-        } else if (event && !event.data.includes('opened') && !event.data.includes('Subscribed') && !event.data.includes('unsubscribe')) {
+          const currencyType = this.currency
+          currencyType.replace('/', '')
+          self.connection.send(JSON.stringify({ event: 'subscribe', currency_type: currencyType }))
+        } else if (event && !event.data.includes('opened')) {
           console.log('log1111111111', event.data)
-          if (JSON.parse(event.data).currency === 'BTCUSDT') {
-            self.setBTCbuyprice(JSON.parse(event.data).average_buy_price)
-          }
-          if (JSON.parse(event.data).currency === 'ETHUSDT') {
-            self.setETHbuyprice(JSON.parse(event.data).average_buy_price)
-          }
-          const currencyType = self.currency.replace('/', '')
-          if (JSON.parse(event.data).currency === self.currencyType) {
-            console.log('currencytype------------', self.currencyType)
-            const oldCurrencyInfo = self.currencyInfo
-            self.currencyInfo = JSON.parse(event.data)
-            self.setCurrencyInfo(JSON.parse(event.data))
-            self.addChartData(self.currencyInfo.average_buy_price)
-            self.addChartDate(self.currencyInfo.time)
-            self.changedPrice = (self.currencyInfo.average_buy_price - oldCurrencyInfo.average_buy_price).toFixed(2)
-            self.changedPercent = (self.changedPrice / oldCurrencyInfo.average_buy_price * 100).toFixed(2)
-          }
+          const oldCurrencyInfo = self.currencyInfo
+          self.currencyInfo = JSON.parse(event.data)
+          self.addChartData(self.currencyInfo.average_buy_price)
+          const date = new Date(self.currencyInfo.time)
+          self.addChartDate(date)
+          self.changedPrice = (self.currencyInfo.average_buy_price - oldCurrencyInfo.average_buy_price).toFixed(2)
+          self.changedPercent = (self.changedPrice / oldCurrencyInfo.average_buy_price * 100).toFixed(2)
         }
       }
       this.connection.onclose = function () {
@@ -177,8 +169,11 @@ export default {
   },
 
   created () {
-    this.currencyType = this.currency.replace('/', '')
     this.onSocket()
+  },
+
+  beforeDestroy () {
+    this.closeSocket()
   }
 }
 </script>

@@ -7,7 +7,7 @@
     <div class="select-lable flex items-center cursor-pointer">
       <span class="name mr-2" :class="opacityName">{{ lable }}</span>
       <span v-if="lableTwo" class="name ml-2">{{ lableTwo }}</span>
-      <i class="icon-arrow"></i>
+      <i v-if="!showIcon" class="icon-arrow"></i>
     </div>
 
     <ul class="options">
@@ -27,7 +27,7 @@ import clickOutsideMixin from '@/mixins/clickOutside.mixin'
 export default {
   name: 'CustomSelect',
   mixins: [clickOutsideMixin],
-  props: ['options', 'lable', 'lableTwo', 'opacityName'],
+  props: ['options', 'lable', 'lableTwo', 'showIcon', 'opacityName'],
   data: () => ({
     isActive: false
   }),

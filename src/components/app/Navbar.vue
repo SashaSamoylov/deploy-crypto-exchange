@@ -60,7 +60,7 @@
           <li class="dropdown-item"><a href="#">Menu</a></li>
           <li class="dropdown-item"><a href="#">Menu</a></li>
           <li class="divider"></li>
-          <li class="dropdown-item logout"><a href="#">Logout</a></li>
+          <li class="dropdown-item logout" @click.prevent="logout"><a>Logout</a></li>
         </ul>
       </li>
 
@@ -77,6 +77,9 @@
 <script>
 import clickOutsideMixin from '@/mixins/clickOutside.mixin'
 import AppSelect from '@/components/ui/AppSelect'
+import {
+  mapActions
+} from 'vuex'
 
 export default {
   name: 'Navbar',
@@ -105,6 +108,7 @@ export default {
     AppSelect
   },
   methods: {
+    ...mapActions('auth', ['logout']),
     accountOutside () {
       this.dropdown = false
     },

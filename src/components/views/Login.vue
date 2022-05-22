@@ -8,7 +8,7 @@
           title="Enter to the code"
           @forgot="loginPage = 'ForgotForm'"
           @forgotPassword="loginPage = 'SecurityCode'"
-          @submitCode="submitCode"
+          @submitCode="loginPage = 'NewPassword'"
           @submit="submitLogin"
           :error="error"
         />
@@ -38,8 +38,7 @@ export default {
   },
   data: () => ({
     loginPage: 'LoginForm',
-    error: null,
-    prevLoginPage: ''
+    error: null
   }),
   computed: {
     ...mapGetters('app', ['notification']),
@@ -48,48 +47,21 @@ export default {
     }
   },
   methods: {
-    ...mapActions('auth', ['loginUser', 'receiveVerificationCode', 'sendVerificationcode']),
+    ...mapActions('auth', ['loginUser', 'receiveVerificationCode']),
     submitLogin (loginData) {
       console.log(loginData)
       this.loginUser(loginData)
         // eslint-disable-next-line no-return-assign
         .then((res) => {
-          console.log('wer-------', res)
           if (res.status === 200) {
-            if (res.data.two_factor_auth === true) {
-              this.receiveVerificationCode()
-              this.prevLoginPage = this.loginPage
-              this.loginPage = 'SecurityCode'
-            } else {
-              window.location.href = '/'
-            }
+            this.receiveVerificationCode()
+            // window.location.href = '/'
             this.error = 200
           } else {
             this.error = res.data
           }
         })
         .catch(err => alert(err))
-    },
-    submitCode (data) {
-      if (this.prevLoginPage === 'LoginForm') {
-        this.sendVerificationcode({ verification_code: data }).then((res) => {
-          if (res.status === 200) {
-            if (res.data.includes('wrong')) {
-              this.codeError = res.data
-            } else {
-              this.codeError = 200
-              // this.confirmSecurity(true)
-              window.location.href = '/'
-            }
-            console.log('code res', res.data)
-          } else {
-            this.codeError = res.status
-            console.log('failure verification code')
-          }
-        })
-      } else {
-        this.loginPage = 'NewPassword'
-      }
     }
   }
 }

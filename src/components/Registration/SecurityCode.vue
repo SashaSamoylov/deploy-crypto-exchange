@@ -19,6 +19,8 @@
           >
         </div>
       </div>
+      <div v-if="codeerror&&codeerror!==200" class="text-red mb-4">{{ codeerror }}</div>
+      <div v-if="codeerror===200" class="text-green mb-4">Success: Welcome to signup!</div>
       <button type="submit" class="btn btn-yellow">Sign up</button>
     </form>
   </div>
@@ -27,13 +29,18 @@
 <script>
 export default {
   name: 'SecurityCode',
-  props: ['title'],
+  props: ['title', 'codeerror'],
   data: () => ({
-    codeArray: []
+    codeArray: [],
+    error: ''
   }),
   methods: {
     submitSecurityCode () {
-      this.$emit('submitCode', this.codeArray.join(''))
+      if (this.codeArray.length === 4) {
+        this.$emit('submitCode', this.codeArray.join(''))
+      } else {
+        this.error = 'please insert security code'
+      }
     }
   }
 }

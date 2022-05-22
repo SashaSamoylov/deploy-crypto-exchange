@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import JwtService from '@/utils/jwt.service'
+import securitycode from '@/utils/securitycode'
 
 Vue.use(VueRouter)
 
@@ -144,6 +146,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login']
+  const authRequired = !publicPages.includes(to.path)
+  const loggedIn = localStorage.getItem('user')
+
+  if (authRequired && !loggedIn) {
+    return next('/login')
+  }
+
+  next()
 })
 
 export default router
